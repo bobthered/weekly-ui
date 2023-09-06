@@ -1,0 +1,21 @@
+{
+  "name": "weekly-ui",
+  "version": "1.0.0",
+  "description": "Weekly UI Coding Challenges Converting Dribbble Designs to Code",
+  "main": "index.js",
+  "scripts": {
+    "init": "node scripts/init",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "image-downloader": "^4.3.0",
+    "inquirer": "^9.2.10",
+    "jsdom": "^22.1.0",
+    "prettier": "^3.0.3"
+  },
+  "type": "module"
+}

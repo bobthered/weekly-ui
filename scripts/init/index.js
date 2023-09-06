@@ -1,0 +1,24 @@
+import { downloadImage } from './downloadImage.js';
+import { exec } from './exec.js';
+import { makeDirectory } from './makeDirectory.js';
+import { makeSveltekitAliases } from './makeSveltekitAliases.js';
+import { makeSveltekitProject } from './makeSveltekitProject.js';
+import { prompt } from './prompt.js';
+import { resetChallenges } from './resetChallenges.js';
+import { scrapeDribbble } from './scrapeDribbble.js';
+import { updateREADME } from './updateREADME.js';
+import { updatePackage } from './updatePackage.js';
+import { updateTailwindConfig } from './updateTailwindConfig.js';
+import { updateViteConfig } from './updateViteConfig.js';
+
+await resetChallenges();
+const { primary, url } = await prompt();
+const { imgSrc, title } = await scrapeDribbble(url);
+const { challengeNumber, directory } = await makeDirectory(title);
+await makeSveltekitProject(directory, exec, imgSrc);
+await downloadImage(directory, imgSrc);
+await makeSveltekitAliases(directory);
+await updatePackage(directory);
+await updateTailwindConfig(directory, primary);
+await updateViteConfig(directory);
+await updateREADME(challengeNumber, directory, title, url);
