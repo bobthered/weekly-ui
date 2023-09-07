@@ -8,6 +8,7 @@ import { resetChallenges } from './resetChallenges.js';
 import { scrapeDribbble } from './scrapeDribbble.js';
 import { updateREADME } from './updateREADME.js';
 import { updatePackage } from './updatePackage.js';
+import { updatePrettier } from './updatePrettier.js';
 import { updateTailwindConfig } from './updateTailwindConfig.js';
 import { updateViteConfig } from './updateViteConfig.js';
 
@@ -19,6 +20,7 @@ await makeSveltekitProject(directory, exec, imgSrc);
 await downloadImage(directory, imgSrc);
 await makeSveltekitAliases(directory);
 await updatePackage(directory);
+await updatePrettier(directory);
 await updateTailwindConfig(directory, primary);
 await updateViteConfig(directory);
 await updateREADME(challengeNumber, directory, title, url);

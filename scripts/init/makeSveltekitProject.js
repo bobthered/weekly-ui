@@ -1,5 +1,3 @@
-import axios from 'axios';
-import { promises as fs } from 'fs';
 import { image } from 'image-downloader';
 import path from 'path';
 
@@ -10,6 +8,8 @@ export const makeSveltekitProject = async (directory, exec, imgSrc) => {
       `cd ${directory}`,
       'npx svelte-add@latest tailwindcss',
       'npm i -D @bobthered/tailwindcss-palette-generator tailwind-merge sveltewind',
+      'npm uninstall prettier prettier-plugin-svelte',
+      'npm i -D prettier prettier-plugin-svelte prettier-plugin-tailwindcss',
       'npm i',
     ].join(' && ')
   );
